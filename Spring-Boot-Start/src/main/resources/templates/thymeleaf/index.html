@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8" />
+    <title></title>
+</head>
+<script th:src="@{/static/js/jquery.min.js}"></script>
+<script th:src="@{/static/js/index.js}"></script>
+<body>
+Thymeleaf模板引擎
+<h1 th:text="${name}">hello world~~~~~~~</h1>
+<form  id="openAccountSubmit" action="#" method="get">
+            请求路径：<input  type="text"  name="openAccountUrl" value="http://localhost:9200/v1/depository/openAccount/"/>
+             用户id： <input  type="text"  name="uid" value="1011536166349574144"/>
+       token：<input  type="text"  name="token" value=""/>
+    <input type="button" id="bankUrlBtn" value="存管开户" /> 
+</form>
+
+<form  id="bankUrlForm" action="" method="post">
+	<input  type="hidden"  name="merchantCode" id="merchantCode"  th:text="${merchantCode}"/>
+	<input  type="hidden"  name="requestKey" id="requestKey" th:text="${requestKey}"/>
+	<input  type="hidden"  name="data" id="data" th:text="${data}"/>
+	<input  type="hidden"  name="sign"   id="sign" th:text="${sign}"/>
+</form>
+
+</body>
+</html>
